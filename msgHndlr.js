@@ -125,8 +125,7 @@ module.exports = msgHandler = async (client, message) => {
                     var imageBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
                     var base64img = imageBase64
                     var outFile = './media/img/noBg.png'
-                    // untuk api key kalian bisa dapatkan pada website remove.bg
-                    var result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'API-KEY', size: 'auto', type: 'auto', outFile })
+                    var result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'Z2sNK9JKNt81hFeT3RR3ZNo1', size: 'auto', type: 'auto', outFile })
                     await fs.writeFile(outFile, result.base64img)
                     await client.sendImageAsSticker(from, `data:${mimetype};base64,${result.base64img}`)
                 } catch(err) {
